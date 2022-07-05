@@ -93,6 +93,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { GET_MOVIES } from '../services/movies.service';
 
 export default Vue.extend({
   name: 'HelloWorld',
@@ -148,6 +149,16 @@ export default Vue.extend({
         href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
       },
     ],
+    movies: [],
   }),
+  async mounted() {
+    const response = await GET_MOVIES();
+    this.movies = response.data.results;
+  },
+  watch: {
+    movies() {
+      console.log(this.movies);
+    },
+  },
 });
 </script>
