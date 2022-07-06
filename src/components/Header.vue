@@ -18,7 +18,7 @@
       </div>
       <div class="px-2">
         <v-badge content="2" color="success">
-          <v-icon>mdi-cart-outline</v-icon>
+          <v-icon @click.stop="openDrawer">mdi-cart-outline</v-icon>
         </v-badge>
       </div>
     </div>
@@ -27,6 +27,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { mapState } from 'vuex';
 import { SEARCH_MOVIE } from '../services/movies.service';
 
 export default Vue.extend({
@@ -35,12 +36,18 @@ export default Vue.extend({
   data: () => ({
     search: '',
   }),
+  computed: {
+    ...mapState(['drawer']),
+  },
   methods: {
     async searchMovie() {
       const response = await SEARCH_MOVIE(this.search);
       const { results } = response.data;
 
       this.$store.dispatch('searchMovies', results);
+    },
+    openDrawer() {
+      this.$store.dispatch('toggleDrawer', !this.drawer);
     },
   },
 });

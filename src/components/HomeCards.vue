@@ -27,7 +27,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import { GET_MOVIES } from '../services/movies.service';
 
 export default Vue.extend({
   name: 'HomeCards',
