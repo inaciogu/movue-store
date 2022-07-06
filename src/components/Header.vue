@@ -6,15 +6,20 @@
         <v-app-bar-title>Movue store</v-app-bar-title>
       </div>
       <div class="w-100">
-       <v-text-field
-        v-model="search"
-        hide-details
-        outlined
-        label="pesquisar"
-        append-icon="mdi-magnify"
-        @click:append="searchMovie"
-        single-line
-      ></v-text-field>
+        <v-text-field
+          v-model="search"
+          hide-details
+          outlined
+          label="pesquisar"
+          append-icon="mdi-magnify"
+          @click:append="searchMovie"
+          single-line
+        ></v-text-field>
+      </div>
+      <div class="px-2">
+        <v-badge content="2" color="success">
+          <v-icon>mdi-cart-outline</v-icon>
+        </v-badge>
       </div>
     </div>
   </v-app-bar>
