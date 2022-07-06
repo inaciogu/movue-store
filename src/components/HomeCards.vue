@@ -26,22 +26,14 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { mapState } from 'vuex';
 import { GET_MOVIES } from '../services/movies.service';
 
 export default Vue.extend({
   name: 'HomeCards',
 
-  data: () => ({
-    movies: [],
-  }),
-  async mounted() {
-    const response = await GET_MOVIES();
-    this.movies = response.data.results;
-  },
-  watch: {
-    movies() {
-      console.log(this.movies);
-    },
+  computed: {
+    ...mapState(['movies']),
   },
 });
 </script>
