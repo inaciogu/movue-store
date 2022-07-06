@@ -1,7 +1,13 @@
 <template>
   <v-app>
     <header-app />
-    <v-navigation-drawer temporary v-model="drawer">oi</v-navigation-drawer>
+    <v-navigation-drawer absolute temporary v-model="drawer">
+      <v-list>
+        <v-list-item>
+          asdasd
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
     <v-main>
       <router-view/>
     </v-main>
