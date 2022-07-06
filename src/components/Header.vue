@@ -33,7 +33,9 @@ export default Vue.extend({
   methods: {
     async searchMovie() {
       const response = await SEARCH_MOVIE(this.search);
-      console.log(response.data.results);
+      const { results } = response.data;
+
+      this.$store.dispatch('searchMovies', results);
     },
   },
 });
