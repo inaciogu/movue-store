@@ -20,9 +20,6 @@ export default new Vuex.Store({
         price: 79.99,
       }));
     },
-    searchMovies(state, payload) {
-      state.movies = payload;
-    },
     addToCart(state, payload) {
       const movieAlreadyOnCart = state.cart.find((movie) => movie.id === payload.id);
 
@@ -56,9 +53,6 @@ export default new Vuex.Store({
   actions: {
     getMovies(context, payload) {
       context.commit('getMovies', payload);
-    },
-    searchMovies(context, payload) {
-      context.commit('searchMovies', payload);
     },
   },
   modules: {

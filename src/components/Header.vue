@@ -45,10 +45,15 @@ export default Vue.extend({
       const response = await SEARCH_MOVIE(this.search);
       const { results } = response.data;
 
-      this.$store.dispatch('searchMovies', results);
+      this.$store.dispatch('getMovies', results);
     },
     openDrawer() {
       this.$store.commit('toggleDrawer', !this.drawer);
+    },
+  },
+  watch: {
+    movies() {
+      console.log(this.$store.state.movies);
     },
   },
 });
