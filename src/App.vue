@@ -47,6 +47,11 @@ import Vue from 'vue';
 import { mapGetters } from 'vuex';
 import HeaderApp from './components/Header.vue';
 
+const formatter = new Intl.NumberFormat('pt-BR', {
+  style: 'currency',
+  currency: 'BRL',
+});
+
 export default Vue.extend({
   name: 'App',
   components: {
@@ -77,7 +82,7 @@ export default Vue.extend({
     },
     totalPrice: {
       get() {
-        return this.$store.getters.totalPrice;
+        return formatter.format(this.$store.getters.totalPrice);
       },
     },
   },
