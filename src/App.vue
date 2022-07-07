@@ -6,7 +6,7 @@
         class="d-flex flex-column justify-space-between"
         style="height: 100%"
       >
-        <v-card-content>
+        <div>
           <div class="d-flex justify-space-between">
             <v-card-title> Meu Carrinho </v-card-title>
             <v-card-actions>
@@ -29,7 +29,7 @@
               </v-list-item-group>
             </v-list-item>
           </v-list>
-        </v-card-content>
+        </div>
         <v-footer class="d-flex align-center justify-space-between">
           <p>Total:</p>
           <p>{{ totalPrice }}</p>
