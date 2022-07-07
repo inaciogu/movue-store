@@ -8,10 +8,17 @@ export default new Vuex.Store({
   state: {
     movies: [] as IMovie[],
     cart: [] as ICartItem[],
+    totalPrice: 0,
     drawer: false,
   },
   getters: {
     drawer: (state) => state.drawer,
+    totalPrice: (state) => {
+      const finalPrice = state.cart.reduce((acc, current) => (
+        acc + (current.price * current.quantity)
+      ), 0);
+      return finalPrice;
+    },
   },
   mutations: {
     getMovies(state, payload) {

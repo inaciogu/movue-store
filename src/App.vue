@@ -32,7 +32,7 @@
         </v-card-content>
         <v-footer class="d-flex align-center justify-space-between">
           <p>Total:</p>
-          <p>19.99</p>
+          <p>{{ totalPrice }}</p>
         </v-footer>
       </v-card>
     </v-navigation-drawer>
@@ -60,6 +60,7 @@ export default Vue.extend({
     ...mapGetters({
       drawerFromStore: 'drawer',
       storedCart: 'cart',
+      totalPrice: 'totalPrice',
     }),
     cart: {
       get() {
@@ -72,6 +73,11 @@ export default Vue.extend({
       },
       set(newValue) {
         return this.$store.commit('toggleDrawer', newValue);
+      },
+    },
+    totalPrice: {
+      get() {
+        return this.$store.getters.totalPrice;
       },
     },
   },
