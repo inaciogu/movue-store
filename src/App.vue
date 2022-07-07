@@ -1,15 +1,27 @@
 <template>
   <v-app>
     <header-app />
-    <v-navigation-drawer absolute temporary v-model="drawer">
-      <v-list>
-        <v-list-item>
-          asdasd
-        </v-list-item>
-      </v-list>
+    <v-navigation-drawer bottom width="400" fixed temporary v-model="drawer">
+      <v-card>
+        <div class="d-flex justify-space-between">
+          <v-card-title> Meu Carrinho </v-card-title>
+          <v-card-actions>
+            <v-btn outlined>Esvaziar carrinho</v-btn>
+          </v-card-actions>
+        </div>
+        <v-list>
+          <v-list-item :key="item.id" v-for="item in cart">
+            <v-list-item-content>
+              <v-list-item-title>
+                {{ item.title }}
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-card>
     </v-navigation-drawer>
     <v-main>
-      <router-view/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
@@ -31,7 +43,13 @@ export default Vue.extend({
   computed: {
     ...mapGetters({
       drawerFromStore: 'drawer',
+      storedCart: 'cart',
     }),
+    cart: {
+      get() {
+        return this.$store.state.cart;
+      },
+    },
     drawer: {
       get() {
         return this.$store.getters.drawer;
