@@ -55,7 +55,7 @@ export default Vue.extend({
         return this.$store.getters.drawer;
       },
       set(newValue) {
-        return this.$store.dispatch('toggleDrawer', newValue);
+        return this.$store.commit('toggleDrawer', newValue);
       },
     },
   },

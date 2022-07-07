@@ -39,7 +39,7 @@ export default Vue.extend({
 
   methods: {
     addToCart(movie: IMovie) {
-      this.$store.dispatch('addToCart', movie);
+      this.$store.commit('addToCart', movie);
     },
   },
   watch: {

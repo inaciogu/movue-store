@@ -48,7 +48,7 @@ export default Vue.extend({
       this.$store.dispatch('searchMovies', results);
     },
     openDrawer() {
-      this.$store.dispatch('toggleDrawer', !this.drawer);
+      this.$store.commit('toggleDrawer', !this.drawer);
     },
   },
 });

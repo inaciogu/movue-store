@@ -34,12 +34,6 @@ export default new Vuex.Store({
     searchMovies(context, payload) {
       context.commit('searchMovies', payload);
     },
-    addToCart(context, payload) {
-      context.commit('addToCart', payload);
-    },
-    toggleDrawer(context, payload) {
-      context.commit('toggleDrawer', payload);
-    },
   },
   modules: {
   },
