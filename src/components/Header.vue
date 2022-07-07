@@ -17,7 +17,7 @@
         ></v-text-field>
       </div>
       <div class="px-2">
-        <v-badge content="2" color="success">
+        <v-badge :content="cart.length" color="success">
           <v-icon @click.stop="openDrawer">mdi-cart-outline</v-icon>
         </v-badge>
       </div>
@@ -38,6 +38,7 @@ export default Vue.extend({
   }),
   computed: {
     ...mapState(['drawer']),
+    ...mapState(['cart']),
   },
   methods: {
     async searchMovie() {
