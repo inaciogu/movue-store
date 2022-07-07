@@ -23,6 +23,9 @@ export default new Vuex.Store({
     addToCart(state, payload) {
       state.cart = [...state.cart, payload];
     },
+    clearCart(state) {
+      state.cart = [];
+    },
     toggleDrawer(state, payload) {
       state.drawer = payload;
     },

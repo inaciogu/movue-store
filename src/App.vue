@@ -6,7 +6,7 @@
         <div class="d-flex justify-space-between">
           <v-card-title> Meu Carrinho </v-card-title>
           <v-card-actions>
-            <v-btn outlined>Esvaziar carrinho</v-btn>
+            <v-btn outlined @click="clearCart">Esvaziar carrinho</v-btn>
           </v-card-actions>
         </div>
         <v-list>
@@ -57,6 +57,11 @@ export default Vue.extend({
       set(newValue) {
         return this.$store.commit('toggleDrawer', newValue);
       },
+    },
+  },
+  methods: {
+    clearCart() {
+      this.$store.commit('clearCart');
     },
   },
 });
