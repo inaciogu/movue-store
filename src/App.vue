@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <header-app />
-    <v-navigation-drawer bottom width="400" fixed temporary v-model="drawer">
+    <v-navigation-drawer bottom width="40%" fixed temporary v-model="drawer">
       <v-card
         class="d-flex flex-column justify-space-between"
         style="height: 100%"
@@ -17,9 +17,14 @@
             <v-list-item :key="item.id" v-for="item in cart">
               <v-list-item-group
                 style="width: 100%"
-                class="d-flex justify-space-around align-center"
+                class="d-flex justify-space-between align-center py-2"
               >
-                <v-list-item-title style="max-width: 50%; bread-word: wrap">
+                <v-avatar class="mr-1" rounded size="46">
+                  <v-img
+                    :src="`https://image.tmdb.org/t/p/original/${item.backdrop_path}`"
+                  />
+                </v-avatar>
+                <v-list-item-title>
                   {{ item.title }}
                 </v-list-item-title>
                 <v-list-item-subtitle align="center">
