@@ -11,16 +11,18 @@
         </div>
         <v-list>
           <v-list-item :key="item.id" v-for="item in cart">
-            <v-list-item-content>
-              <div class="d-flex justify-space-between">
-                <v-list-item-title>
-                  {{ item.title }}
-                </v-list-item-title>
-                <v-btn icon @click="removeItem(item.id)">
-                  <v-icon>mdi-delete-outline</v-icon>
-                </v-btn>
-              </div>
-            </v-list-item-content>
+            <v-list-item-group
+              style="width: 100%"
+              class="d-flex justify-space-between align-center"
+            >
+              <v-list-item-title style="max-width: 50%; bread-word: wrap">
+                {{ item.title }}
+              </v-list-item-title>
+              {{ item.quantity }}
+              <v-btn icon @click="removeItem(item.id)">
+                <v-icon>mdi-delete-outline</v-icon>
+              </v-btn>
+            </v-list-item-group>
           </v-list-item>
         </v-list>
       </v-card>
