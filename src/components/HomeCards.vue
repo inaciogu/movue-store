@@ -1,7 +1,11 @@
 <template>
   <v-container>
     <div class="d-flex justify-center flex-wrap align-center">
-      <v-col class="d-flex justify-center" v-for="movie in movies" :key="movie.id">
+      <v-col
+        class="d-flex justify-center"
+        v-for="movie in movies"
+        :key="movie.id"
+      >
         <v-card
           align="center"
           class="d-flex flex-column align-center"
@@ -9,15 +13,19 @@
           height="450px"
         >
           <v-img
+            max-height="300"
             :src="`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`"
           />
-          <v-card-title>{{ movie.title }}</v-card-title>
-          <v-col>
-            {{ movie.vote_average.toFixed(1) }}
-          </v-col>
-          <v-btn @click="addToCart(movie)" width="100%" color="primary"
-            >Adicionar</v-btn
+          <div
+            class="d-flex flex-column align-center justify-space-between"
+            style="height: 50%; width: 100%"
           >
+            <v-card-title>{{ movie.title }}</v-card-title>
+            <v-card-subtitle>
+              {{ movie.vote_average.toFixed(1) }}
+            </v-card-subtitle>
+            <v-btn style="width: 100%" @click="addToCart(movie)" color="primary">Adicionar</v-btn>
+          </div>
         </v-card>
       </v-col>
     </div>
