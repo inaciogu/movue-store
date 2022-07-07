@@ -12,9 +12,14 @@
         <v-list>
           <v-list-item :key="item.id" v-for="item in cart">
             <v-list-item-content>
-              <v-list-item-title>
-                {{ item.title }}
-              </v-list-item-title>
+              <div class="d-flex justify-space-between">
+                <v-list-item-title>
+                  {{ item.title }}
+                </v-list-item-title>
+                <v-btn icon @click="removeItem(item.id)">
+                  <v-icon>mdi-delete-outline</v-icon>
+                </v-btn>
+              </div>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -62,6 +67,9 @@ export default Vue.extend({
   methods: {
     clearCart() {
       this.$store.commit('clearCart');
+    },
+    removeItem(id: number) {
+      this.$store.commit('removeItem', id);
     },
   },
 });

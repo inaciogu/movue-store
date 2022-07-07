@@ -26,6 +26,9 @@ export default new Vuex.Store({
     clearCart(state) {
       state.cart = [];
     },
+    removeItem(state, payload) {
+      state.cart = state.cart.filter((item) => item.id !== payload);
+    },
     toggleDrawer(state, payload) {
       state.drawer = payload;
     },
