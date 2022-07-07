@@ -15,7 +15,10 @@ export default new Vuex.Store({
   },
   mutations: {
     getMovies(state, payload) {
-      state.movies = payload;
+      state.movies = payload.map((movie: IMovie) => ({
+        ...movie,
+        price: 79.99,
+      }));
     },
     searchMovies(state, payload) {
       state.movies = payload;

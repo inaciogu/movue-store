@@ -43,8 +43,8 @@ export default Vue.extend({
     },
   },
   watch: {
-    cart() {
-      console.log(this.$store.state.cart);
+    movies() {
+      console.log(this.$store.state.movies);
     },
   },
 });
