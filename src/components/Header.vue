@@ -17,7 +17,7 @@
         ></v-text-field>
       </div>
       <div class="px-2">
-        <v-badge :content="cart.length" color="success">
+        <v-badge :content="totalQuantity" color="success">
           <v-icon @click.stop="openDrawer">mdi-cart-outline</v-icon>
         </v-badge>
       </div>
@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapState } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 import { SEARCH_MOVIE } from '../services/movies.service';
 
 export default Vue.extend({
@@ -39,6 +39,14 @@ export default Vue.extend({
   computed: {
     ...mapState(['drawer']),
     ...mapState(['cart']),
+    ...mapGetters({
+      totalQuantity: 'totalQuantity',
+    }),
+    totalQuantity: {
+      get() {
+        return this.$store.getters.totalQuantity;
+      },
+    },
   },
   methods: {
     async searchMovie() {

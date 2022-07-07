@@ -19,6 +19,12 @@ export default new Vuex.Store({
       ), 0);
       return finalPrice;
     },
+    totalQuantity: (state) => {
+      const totalQuantity = state.cart.reduce((acc, current) => (
+        acc + current.quantity
+      ), 0);
+      return totalQuantity;
+    },
   },
   mutations: {
     getMovies(state, payload) {
