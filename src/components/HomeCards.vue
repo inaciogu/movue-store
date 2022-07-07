@@ -24,6 +24,9 @@
             <v-card-subtitle>
               {{ movie.vote_average.toFixed(1) }}
             </v-card-subtitle>
+            <v-card-subtitle>
+              {{ formatter(movie.price) }}
+            </v-card-subtitle>
             <v-btn style="width: 100%" @click="addToCart(movie)" color="primary">Adicionar</v-btn>
           </div>
         </v-card>
@@ -37,8 +40,17 @@ import { IMovie } from '@/@types';
 import Vue from 'vue';
 import { mapState } from 'vuex';
 
+const { format } = new Intl.NumberFormat('pt-BR', {
+  style: 'currency',
+  currency: 'BRL',
+});
+
 export default Vue.extend({
   name: 'HomeCards',
+
+  data: () => ({
+    formatter: format,
+  }),
 
   computed: {
     ...mapState(['movies']),
