@@ -1,3 +1,4 @@
+import { IMovie } from '@/@types';
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -5,8 +6,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    movies: [],
-    cart: [],
+    movies: [] as IMovie[],
+    cart: [] as IMovie[],
     drawer: false,
   },
   getters: {
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     searchMovies(state, payload) {
       state.movies = payload;
     },
+    addToCart(state, payload) {
+      state.cart = [...state.cart, payload];
+    },
     toggleDrawer(state, payload) {
       state.drawer = payload;
     },
@@ -29,6 +33,9 @@ export default new Vuex.Store({
     },
     searchMovies(context, payload) {
       context.commit('searchMovies', payload);
+    },
+    addToCart(context, payload) {
+      context.commit('addToCart', payload);
     },
     toggleDrawer(context, payload) {
       context.commit('toggleDrawer', payload);

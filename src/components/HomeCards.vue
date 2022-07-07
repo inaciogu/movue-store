@@ -15,7 +15,7 @@
           <v-col>
             {{ movie.vote_average.toFixed(1) }}
           </v-col>
-          <v-btn width="100%" color="primary"
+          <v-btn @click="addToCart(movie)" width="100%" color="primary"
             >Adicionar</v-btn
           >
         </v-card>
@@ -25,6 +25,7 @@
 </template>
 
 <script lang="ts">
+import { IMovie } from '@/@types';
 import Vue from 'vue';
 import { mapState } from 'vuex';
 
@@ -33,6 +34,18 @@ export default Vue.extend({
 
   computed: {
     ...mapState(['movies']),
+    ...mapState(['cart']),
+  },
+
+  methods: {
+    addToCart(movie: IMovie) {
+      this.$store.dispatch('addToCart', movie);
+    },
+  },
+  watch: {
+    cart() {
+      console.log(this.$store.state.cart);
+    },
   },
 });
 </script>
