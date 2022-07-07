@@ -17,12 +17,17 @@
             <v-list-item :key="item.id" v-for="item in cart">
               <v-list-item-group
                 style="width: 100%"
-                class="d-flex justify-space-between align-center"
+                class="d-flex justify-space-around align-center"
               >
                 <v-list-item-title style="max-width: 50%; bread-word: wrap">
                   {{ item.title }}
                 </v-list-item-title>
-                {{ item.quantity }}
+                <v-list-item-subtitle align="center">
+                  {{ formatter(item.price) }}
+                </v-list-item-subtitle>
+                <v-list-item-subtitle align="center">
+                  {{ item.quantity }}
+                </v-list-item-subtitle>
                 <v-btn icon @click="removeItem(item.id)">
                   <v-icon>mdi-delete-outline</v-icon>
                 </v-btn>
@@ -59,7 +64,7 @@ export default Vue.extend({
   },
 
   data: () => ({
-    //
+    formatter: formatter.format,
   }),
   computed: {
     ...mapGetters({
