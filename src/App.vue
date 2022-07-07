@@ -20,8 +20,8 @@ export default Vue.extend({
     SidebarCart,
   },
 
-  data: () => {
+  data: () => ({
     //
-  },
+  }),
 });
 </script>
