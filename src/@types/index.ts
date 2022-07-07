@@ -5,6 +5,7 @@ export interface IMovie {
   vote_average: number;
   popularity: number;
   release_date: string;
+  price: number;
 }
 
 export interface ICartItem extends IMovie {
