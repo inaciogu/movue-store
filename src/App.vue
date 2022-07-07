@@ -40,9 +40,12 @@
             </v-list-item>
           </v-list>
         </div>
-        <v-footer class="d-flex align-center justify-space-between">
-          <p>Total:</p>
-          <p>{{ totalPrice }}</p>
+        <v-footer class="d-flex flex-column align-center">
+          <div style="width: 100%" class="d-flex justify-space-between align-center">
+            <p>Total:</p>
+            <p style="font-weight: bold">{{ totalPrice }}</p>
+          </div>
+          <v-btn style="width: 100%" elevation="5" color="primary">Finalizar compra</v-btn>
         </v-footer>
       </v-card>
     </v-navigation-drawer>
