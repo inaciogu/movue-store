@@ -2,7 +2,6 @@
   <v-app-bar app color="primary" dark elevation="5">
     <div class="d-flex align-center justify-space-between" style="width: 100%">
       <div class="d-flex align-center">
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
         <v-app-bar-title>Movue store</v-app-bar-title>
       </div>
       <div class="w-100">
