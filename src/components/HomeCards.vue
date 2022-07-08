@@ -101,10 +101,5 @@ export default Vue.extend({
       this.$store.commit('addToCart', movie);
     },
   },
-  watch: {
-    movies() {
-      console.log(this.$store.state.movies);
-    },
-  },
 });
 </script>

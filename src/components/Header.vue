@@ -59,10 +59,5 @@ export default Vue.extend({
       this.$store.commit('toggleDrawer', !this.drawer);
     },
   },
-  watch: {
-    movies() {
-      console.log(this.$store.state.movies);
-    },
-  },
 });
 </script>
