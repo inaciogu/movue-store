@@ -23,7 +23,7 @@
                 />
               </v-avatar>
               <v-list-item-title>
-                {{ item.titlde }}
+                {{ item.title }}
               </v-list-item-title>
               <v-list-item-subtitle align="center">
                 {{ formatter(item.price) }}
