@@ -34,9 +34,12 @@
             style="height: 50%; width: 100%"
           >
             <v-card-title>{{ movie.title }}</v-card-title>
-            <v-card-subtitle>
-              {{ movie.vote_average.toFixed(1) }}
-            </v-card-subtitle>
+            <div class="d-flex align-center">
+              <v-icon color="yellow darken-3">mdi-star</v-icon>
+              <v-card-subtitle>
+                {{ movie.vote_average.toFixed(1) }}
+              </v-card-subtitle>
+            </div>
             <v-card-subtitle>
               {{ formatter(movie.price) }}
             </v-card-subtitle>
