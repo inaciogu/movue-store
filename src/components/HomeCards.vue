@@ -1,16 +1,14 @@
 <template>
   <v-container>
-    <div class="d-flex justify-center flex-wrap align-center">
-      <v-col
-        class="d-flex justify-center"
-        v-for="movie in movies"
-        :key="movie.id"
-      >
+    <v-main class="d-flex justify-center flex-wrap align-center">
+      <v-row class="d-flex justify-space-around">
         <v-card
+          v-for="movie in movies"
+          :key="movie.id"
           align="center"
-          class="d-flex flex-column align-center"
-          width="300px"
-          height="450px"
+          class="d-flex flex-column align-center my-4"
+          width="360px"
+          height="500px"
         >
           <v-img
             class="d-flex align-end"
@@ -31,7 +29,7 @@
           </v-img>
           <div
             class="d-flex flex-column align-center justify-space-between"
-            style="height: 50%; width: 100%"
+            style="width: 100%; height: 50%"
           >
             <v-card-title>{{ movie.title }}</v-card-title>
             <div class="d-flex align-center">
@@ -43,13 +41,16 @@
             <v-card-subtitle>
               {{ formatter(movie.price) }}
             </v-card-subtitle>
-            <v-btn style="width: 100%" @click="addToCart(movie)" color="primary"
+            <v-btn
+              style="width: 100%"
+              @click="addToCart(movie)"
+              color="primary"
               >Adicionar</v-btn
             >
           </div>
         </v-card>
-      </v-col>
-    </div>
+      </v-row>
+    </v-main>
   </v-container>
 </template>
 
