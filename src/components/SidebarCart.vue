@@ -46,7 +46,12 @@
           <p>Total:</p>
           <p style="font-weight: bold">{{ totalPrice }}</p>
         </div>
-        <v-btn to="/purchase" style="width: 100%" elevation="5" color="primary"
+        <v-btn
+          :disabled="!cart.length"
+          to="/purchase"
+          style="width: 100%"
+          elevation="5"
+          color="primary"
           >Finalizar compra
         </v-btn>
       </v-footer>
