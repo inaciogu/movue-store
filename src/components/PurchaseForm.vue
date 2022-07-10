@@ -120,7 +120,7 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" to="/" @click="dialog = false"> Voltar para loja </v-btn>
+          <v-btn color="primary" @click="goHome"> Voltar para loja </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -182,6 +182,10 @@ export default Vue.extend({
       if ((this.$refs.form as Vue & { validate: () => boolean }).validate()) {
         this.dialog = true;
       }
+    },
+    goHome() {
+      this.$router.push('/');
+      this.$store.commit('clearCart');
     },
   },
 });
