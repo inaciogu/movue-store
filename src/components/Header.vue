@@ -1,9 +1,9 @@
 <template>
   <v-app-bar app color="primary" dark elevation="5">
     <div class="d-flex align-center justify-space-between" style="width: 100%">
-      <div class="d-flex align-center">
+      <v-btn text @click="backToHome" class="d-flex align-center">
         <v-app-bar-title>Movue store</v-app-bar-title>
-      </div>
+      </v-btn>
       <div class="w-100">
         <v-text-field
           v-model="search"
@@ -56,6 +56,9 @@ export default Vue.extend({
     },
     openDrawer() {
       this.$store.commit('toggleDrawer', !this.drawer);
+    },
+    backToHome() {
+      this.$router.push('/');
     },
   },
 });
