@@ -1,4 +1,4 @@
-# movue-store
+# Boas vindas ao repositório do Movue Store
 
 ## Sobre
 
