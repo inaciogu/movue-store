@@ -15,7 +15,16 @@
           single-line
         ></v-text-field>
       </div>
-      <div class="px-2">
+      <div class="px-2 d-flex align-center">
+        <div>
+          <v-btn icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">
+            <v-icon>{{
+              $vuetify.theme.dark
+                ? "mdi-lightbulb-on-outline"
+                : "mdi-weather-night"
+            }}</v-icon>
+          </v-btn>
+        </div>
         <v-badge :content="totalQuantity" color="success">
           <v-icon @click.stop="openDrawer">mdi-cart-outline</v-icon>
         </v-badge>
