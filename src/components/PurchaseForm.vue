@@ -57,7 +57,7 @@
             </v-col>
           </v-row>
         </v-col>
-        <v-col>
+        <v-col md="6" sm="12">
           <v-list>
             <v-list-item :key="item.id" v-for="item in cart">
               <v-list-item-group
