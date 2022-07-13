@@ -1,9 +1,9 @@
 <template>
   <v-app-bar app color="primary" dark elevation="5">
     <div class="d-flex align-center justify-space-between" style="width: 100%">
-      <v-btn text @click="backToHome" class="d-flex align-center">
-        <v-app-bar-title>Movue store</v-app-bar-title>
-      </v-btn>
+      <router-link to="/">
+        <v-app-bar-title class="white--text">Movue store</v-app-bar-title>
+      </router-link>
       <div class="w-100">
         <v-text-field
           v-model="search"
